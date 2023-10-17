@@ -12,19 +12,20 @@
                     </h4>
                 </div>
                 <div class="row mt-4">
-                    <!-- ข้อมูลสินค้า 1 -->
+                    <!-- ข้อมูลสินค้า -->
+                    {% for product in products %}
                     <div class="item features-image сol-12 col-md-6 col-lg-4">
                         <div class="item-wrapper">
                             <div class="item-img">
                                 <a href="details.html">
-                                    <img src="https://placehold.co/400x400/">
+                                    <img src="{{product.image.url}}">
                                 </a>
                             </div>
                             <div class="item-content">
                                 <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
-                                    <strong>ชื่อสินค้า : xxxxx</strong>
+                                    <strong>ชื่อสินค้า : {{product.name}}</strong>
                                 </h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">ราคา xxx บาท</p>
+                                <p class="mbr-text mbr-fonts-style mt-3 display-7">ราคา {{product.price}} บาท</p>
                             </div>
                             <div class="mbr-section-btn item-footer mt-2">
                                 <a href="cart.html" class="btn btn-primary display-4">
@@ -34,51 +35,7 @@
                             </div>
                         </div>
                     </div>
-    
-                    <!-- ข้อมูลสินค้า 2 -->
-                    <div class="item features-image сol-12 col-md-6 col-lg-4">
-                        <div class="item-wrapper">
-                            <div class="item-img">
-                                <a href="details.html">
-                                    <img src="https://placehold.co/400x400/">
-                                </a>
-                            </div>
-                            <div class="item-content">
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
-                                    <strong>ชื่อสินค้า : xxxxx</strong>
-                                </h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">ราคา xxx บาท</p>
-                            </div>
-                            <div class="mbr-section-btn item-footer mt-2">
-                                <a href="cart.html" class="btn btn-primary display-4">
-                                    <i class="bi bi-cart3"></i></i>&nbsp;
-                                    หยิบสินค้าลงตะกร้า
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ข้อมูลสินค้า 3 -->
-                    <div class="item features-image сol-12 col-md-6 col-lg-4">
-                        <div class="item-wrapper">
-                            <div class="item-img">
-                                <a href="details.html">
-                                    <img src="https://placehold.co/400x400/">
-                                </a>
-                            </div>
-                            <div class="item-content">
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
-                                    <strong>ชื่อสินค้า : xxxxx</strong>
-                                </h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">ราคา xxx บาท</p>
-                            </div>
-                            <div class="mbr-section-btn item-footer mt-2">
-                                <a href="cart.html" class="btn btn-primary display-4">
-                                    <i class="bi bi-cart3"></i></i>&nbsp;
-                                    หยิบสินค้าลงตะกร้า
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>
