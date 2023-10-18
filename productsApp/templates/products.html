@@ -49,12 +49,13 @@
           <!-- หมายเลขหน้า -->
           <nav aria-label="product-pagination" class="media-container-row">
               <ul class="pagination pagination-lg">
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                {% for num in all_products.paginator.page_range %}
+                    {% if num != all_products.number %}
+                        <li class="page-item"><a class="page-link" href="?page={{num}}">{{num}}</a></li>
+                    {% else %}
+                        <li class="page-item active"><a class="page-link" href="?page={{num}}">{{num}}</a></li>
+                    {% endif %}
+                {% endfor %}
               </ul>
           </nav>
       </div>
